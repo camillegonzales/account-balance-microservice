@@ -48,7 +48,7 @@ def calculate_balances(age, retirement_age, initial_401k_balance, employer_contr
                 "Brokerage Account Balance": f"${future_brokerage_balance:,.2f}",
                 "Total Balance": f"${total_balance:,.2f}"
             }
-
+    print(future_balances)
     return future_balances
 
 
