@@ -38,7 +38,7 @@ def request_balances(age, retirement_age, initial_401k_balance, employer_contrib
 
 if __name__ == "__main__":
     # Example call to request balances
-    result = request_balances(30, 65, 10000, 5, 50000, 5, 2000, 7, 6000, 5000, 8, 10000)
+    result = request_balances(30, 60, 10000, 5, 50000, 5, 20000, 7, 5000, 40000, 8, 5000)
 
     # User-friendly format of received response from microservice
     print("Here are your projected future balances for each decade until retirement:")
