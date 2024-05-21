@@ -48,7 +48,7 @@ def calculate_balances(age, retirement_age, initial_401k_balance, employer_contr
                 "Brokerage Account Balance": f"${future_brokerage_balance:,.2f}",
                 "Total Balance": f"${total_balance:,.2f}"
             }
-    print(future_balances)
+    print(f"Response: \n    {future_balances} \n")
     return future_balances
 
 
@@ -65,6 +65,7 @@ def microservice():
     while True:
         # Receive request as JSON and extract parameters from received message
         message = socket.recv_json()
+        print(f"Request: \n    {message} \n")
 
         age = message['age']
         retirement_age = message['retirement_age']
