@@ -33,17 +33,16 @@ def request_balances(age, retirement_age, initial_401k_balance, employer_contrib
     # Send request, receive response, and return response as JSON
     socket.send_json(request_data)
     response = socket.recv_json()
-    return response
-
-
-if __name__ == "__main__":
-    # Example call to request balances
-    result = request_balances(30, 60, 10000, 5, 50000, 5, 20000, 7, 5000, 40000, 8, 5000)
 
     # User-friendly format of received response from microservice
     print("Here are your projected future balances for each decade until retirement:")
-    for label, balances in result.items():
+    for label, balances in response.items():
         print(f"{label}:")
         for account, balance in balances.items():
             print(f"  {account}: {balance}")
         print()
+
+
+if __name__ == "__main__":
+    # Example call to request balances
+    request_balances(30, 60, 10000, 5, 50000, 5, 20000, 7, 5000, 40000, 8, 5000)
